@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <!-- Each Division with Same Red Border Color to Differentiate -->
+    <!--Every Code is Original - Code by Pushpendra  -->
+    <head>
+        <title>
+            WEB-DEV Day 1
+        </title>
+        <link href="./style.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+                <div class="one">Header Content</div>
+                <div class="ci1">
+                    <div class="left1">
+                        <div class="ru1">
+                            <div class="final_tag1">Main Content 1</div>
+                            <div class="final_tag2">Main Content 2</div>
+                        </div>
+                        <div class="rb1">Footer Content</div>
+                    </div>
+                    <div class="right1">Sidebar Content</div>
+
+                </div>
+        </div>
+    </body>
+    <style>
+        div{
+            text-align: center;
+            border:5px solid red;
+        }
+        body{
+            margin:0px;
+            padding:0px;
+
+        }
+        .container{
+            height: 99vh;
+            border:5px solid red;
+
+            display: grid;
+            grid-template-rows: 33.33% 66.66%;
+        }
+        .ci1{
+            display: grid;
+            border: 5px solid red;
+            grid-template-columns: 66.66% 33.33%;
+        }
+        .left1,.right1{
+            border: 5px solid red;
+        }
+        .left1{
+            display: grid;
+            grid-template-rows: 50% 50%;
+        }
+        .ru1{
+            border: 5px solid red;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+        .final_tag1,.final_tag2{
+            border:5px solid red;
+        }
+
+    </style>
+</html>
