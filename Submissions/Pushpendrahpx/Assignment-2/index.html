@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Creating Assignment 1 Using Js</title>
+
+  </head>
+  <body>
+      
+  </body>
+  <script>
+    var container = document.createElement("div")
+    var div1 = document.createElement("div")
+    var div2 = document.createElement("div")
+    var div3 = document.createElement("div")
+    var div4 = document.createElement("div")
+    var div5 = document.createElement("div")
+
+    div1.innerHTML = "Header"; div1.style.backgroundColor = "red"; div1.style.padding = "20px 0px 100px 0px";
+    div2.innerHTML = "Header"; div2.style.background = "violet"; div2.style.padding = "20px 0px 100px 0px";
+    div3.innerHTML = "Header" ;div3.style.background = "indigo"; div3.style.padding = "20px 0px 100px 0px";
+    div4.innerHTML = "Header"; div4.style.background = "blue"; div4.style.padding = "20px 0px 100px 0px";
+    div5.innerHTML = "Header"; div5.style.background = "yellow"; div5.style.padding = "20px 0px 100px 0px";
+
+// Defining Each Grid Area Names
+    div1.style.gridArea = "header";
+    div2.style.gridArea = 'main1'
+    div3.style.gridArea = 'main2'
+    div4.style.gridArea = 'footer'
+    div5.style.gridArea = 'sidebar'
+
+// Container Styles
+    container.id = "container"
+    container.style.gridTemplateAreas = '"header header header header header header" "main1 main1 main2 main2 sidebar sidebar" "footer footer footer footer sidebar sidebar"';
+    container.style.background = "red"
+    container.style.textAlign = "center"
+    container.style.gridGap = "5px";
+    container.style.margin = "0px"
+    container.style.padding = "5px"
+    document.body.style.margin = "0px"
+
+    container.appendChild(div1)
+    container.appendChild(div2)
+    container.appendChild(div3)
+    container.appendChild(div4)
+    container.appendChild(div5)
+
+
+    document.body.appendChild(container);
+  </script>
+</html>
+
