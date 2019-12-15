@@ -1,0 +1,47 @@
+var container = document.createElement("div")
+var div1 = document.createElement("div")
+var div2 = document.createElement("div")
+var div3 = document.createElement("div")
+var div4 = document.createElement("div")
+var div5 = document.createElement("div")
+
+div1.innerHTML = "Header Content";
+div2.innerHTML = "Main Content";
+div3.innerHTML = "Main Content" ;
+div4.innerHTML = "Footer Content";
+div5.innerHTML = "Sidebar Content";
+
+// Defining Each Grid Area Names
+div1.style.gridArea = "header";
+div2.style.gridArea = 'main1'
+div3.style.gridArea = 'main2'
+div4.style.gridArea = 'footer'
+div5.style.gridArea = 'sidebar'
+
+// Container Styles
+container.id = "container"
+container.style.background = "red"
+container.style.gridTemplateAreas = '"header header header header header header" "main1 main1 main2 main2 sidebar sidebar" "footer footer footer footer sidebar sidebar"';
+container.style.gridGap = "50px";
+container.style.display = "grid"
+container.style.textAlign = "center"
+container.style.margin = "0px"
+container.style.padding = "50px"
+document.body.style.margin = "0px"
+
+container.appendChild(div1)
+container.appendChild(div2)
+container.appendChild(div3)
+container.appendChild(div4)
+container.appendChild(div5)
+document.body.appendChild(container);
+
+
+let x = document.querySelectorAll("div")
+for(let i of x){
+    i.style.background = "white";
+    i.style.padding = "50px";
+}
+
+container.style.backgroundColor = 'red';
+
