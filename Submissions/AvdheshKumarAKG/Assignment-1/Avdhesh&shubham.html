@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Avdhesh&Shubham</title>
+<head>
+    <style>
+        .item1 {
+            grid-area: header ;
+        }
+
+        .item2 {
+            grid-area: main1;
+        }
+
+        .item3 {
+            grid-area: main2 ;
+        }
+
+        .item4 {
+            grid-area: sidebar ;
+        }
+
+        .item5 {
+            grid-area: Footer ;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas: 'header  header  header  header  header  header' 
+                'main1  main1  main2  main2  sidebar  sidebar ' 
+                'Footer  Footer  Footer  Footer  sidebar  sidebar';
+            grid-gap: 8px;
+            background-color: maroon;
+            padding: 8px;
+        }
+
+            .grid-container > div {
+                background-color: mistyrose;
+                text-align: center;
+                color: maroon;
+                padding: 20px 0px 100px 0px;
+                font-size: 30px;
+            }
+    </style>
+</head>
+<body>
+
+   
+    <div class="grid-container">
+        <div class="item1">header content </div>
+        <div class="item2">main content </div>
+        <div class="item3">main content</div>
+        <div class="item4">sidebar content</div>
+        <div class="item5">Footer content </div>
+    </div>
+
+</body>
+</html>
