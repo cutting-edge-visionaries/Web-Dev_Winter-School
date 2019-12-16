@@ -1,38 +1,55 @@
-button,.counting,#name{
-    margin:20px;
-    padding:10px;
-    background: teal;
-    border:1px dashed transparent;
-    outline: 0px;
-    font-size: 30px;
+body{
+    margin:0px;
+    padding: 0px;
+}
+#root{
+    margin:0px;
+    display: grid;
+    grid-template-areas: "title title title title"
+                         "btn img img img"
+                         "btn img img img"
+                         "count1 count1 count2 count2";
+}
+#name{
+    text-align: center;
     color:white;
-    box-shadow: 6px 6px 6px  teal;
+    font-size: 10vw;
+    background: teal;
+    margin:0px;
+    padding:0px;
+    grid-area: title;
+}
+img{
+    padding:30px;
+    position: relative;
+    grid-area: img;
+}
+.btnc{padding:30px;
+    position: relative;
+    grid-area: btn;
+}
+#count{
+    grid-area: count1;
+}
+#total_count{
+    grid-area: count2;
+}
+button{
+    margin:5px;
+    padding: 10px;
+    border:0px solid teal;
+    outline: 0px;
+    background: teal;
+    color:white;
+    font-size: 30px;
     cursor: pointer;
-
+    border-radius: 5px;
+    box-shadow: 0 0 10px teal;
 }
 button:hover{
-    box-shadow: 0 0 20px grey;
+    box-shadow: 0 0 0 4px white,0 0 0 6px teal;
 }
-
-img{
-    margin:20px;
-    border:2px solid black;
-    height: 400px;
-    width: 400px;
-}
-body{
-    background: #dedede;
-}
-#name,span,.counting{
-    text-align: center;
-    border:1px solid black;
-    padding:10px;
-    margin:10px;
-}
-.counting{
-    text-align: center;
-    border:1px solid black;
-    padding:10px;
-    margin:10px;top:auto;
-    
+button:active{
+    background: white;
+    color: black;
 }
