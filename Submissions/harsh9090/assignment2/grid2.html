@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body onload="gridView()">
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2 align=center>header</h2>
+  </div></div>
+  <div class=row>
+  <div class="column" style="background-color:#bbb;">
+    <h2 align=center>text</h2>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h2 align=center>text</h2>
+  </div>
+  <div class="column" style="background-color:#eee;">
+    <h2 align=center>slider</h2>
+  </div></div>
+  <div class=row>
+  <div class="column" style="background-color:#ddd;">
+    <h2 align=center>footer</h2>
+  </div>
+  <div class="column" style="background-color:#eee;">
+    <h2 align=center>slider</h2>
+  </div>
+</div>
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+function gridView() {
+
+    elements[0].style.width = "100%";
+    elements[1].style.width = "33%";
+    elements[2].style.width = "33%";
+    elements[3].style.width = "34%";
+    elements[4].style.width = "66%";
+    elements[5].style.width = "34%";
+}
+</script>
+
+</body>
+</html>
