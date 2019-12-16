@@ -1,0 +1,39 @@
+button,.counting,#name{
+    margin:20px;
+    padding:10px;
+    background: teal;
+    border:1px dashed transparent;
+    outline: 0px;
+    font-size: 30px;
+    color:white;
+    box-shadow: 6px 6px 6px  teal;
+    cursor: pointer;
+
+}
+button:hover{
+    box-shadow: 0 0 20px grey;
+}
+
+img{
+    margin:20px;
+    border:2px solid black;
+    height: 400px;
+    width: 400px;
+}
+body{
+    background: #dedede;
+}
+#name,span,.counting{
+    text-align: center;
+    border:1px solid black;
+    padding:10px;
+    margin:10px;
+}
+.counting{
+    text-align: center;
+    border:1px solid black;
+    padding:20px;
+    margin:20px;
+    position: absolute;
+    bottom: 0;
+}
