@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+        <head>
+                <title> TEMPLATE IN js </title>
+        </head>
+
+             <body>
+                  <script type="text/javascript">
+                        var boxes = document.createElement("box")
+                        var box1 = document.createElement("box")
+                        var box2 = document.createElement("box")
+                        var box3 = document.createElement("box")
+                        var box4 = document.createElement("box")
+                        var box5 = document.createElement("box")
+                        box1.innerHTML = "<b>HEADER CONTENT</b>";
+                        box2.innerHTML = "MAIN CONTENT";
+                        box3.innerHTML = "MAIN CONTENT"; 
+                        box4.innerHTML = "FOOTER CONTENT";
+                        box5.innerHTML = "SIDEBAR";
+                        box1.style.gridArea = "Header";
+                        box2.style.gridArea = 'Main1'
+                        box3.style.gridArea = 'Main2'
+                        box4.style.gridArea = 'Footer'
+                        box5.style.gridArea = 'Sidebar'
+                        boxes.id = "boxes"
+                        boxes.style.background = "red"  
+                        boxes.style.gridTemplateAreas = '"Header Header Header Header Header Header" "Main1 Main1 Main2 Main2 Sidebar Sidebar" "Footer Footer Footer Footer Sidebar Sidebar"';
+                        boxes.style.gridGap = "5px";
+                        boxes.style.display = "grid"
+                        boxes.style.textAlign = "center"
+                        boxes.style.margin = "0px"
+                        boxes.style.padding = "5px"
+                        document.body.style.margin = "0px"
+                        boxes.appendChild(box1)
+                        boxes.appendChild(box2)
+                        boxes.appendChild(box3)
+                        boxes.appendChild(box4)
+                        boxes.appendChild(box5)
+                        document.body.appendChild(boxes);
+                        let x = document.querySelectorAll("box")
+                        for(let i of x){
+                              i.style.background = "white";
+                              i.style.padding = "30px";
+                        }
+                        boxes.style.backgroundColor = 'red';
+                     </script>
+                  
+        </body>
+</html>
