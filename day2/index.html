@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>event related stuff</title>
+</head>
+<style>
+    ul li{
+        font-size: 50px;
+        line-height: 60px;
+        color: salmon;
+        border: 1px ridge chartreuse;
+        text-align:center;
+        padding: 40px;
+    }
+</style>
+<body>
+    <div>
+        <ul id="ulelement">
+            <li>item 1</li>
+            <li id="secondListItem">item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script>
+    document.querySelector("#ulelement").addEventListener('click',()=>{
+        console.log('event here in bubbling phase');
+    });
+
+    document.querySelector("#secondListItem").addEventListener('click',()=>{
+        console.log('event here in capturing phase');
+    },true);
+</script>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cat Premium</title>
+</head>
+<style>
+    .wrapper {
+        display: flex;
+    }
+
+    .col {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+    .hide{
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="col">
+            <p class="catName" data-id="0"></p>
+            <p class="catName" data-id="1"></p>
+            <p class="catName" data-id="2"></p>
+            <p class="catName" data-id="3"></p>
+            <p class="catName" data-id="4"></p>
+            <button type="button" id="admin">Admin</button>
+            <div id="adminSub" class="hide">
+                <label for="name">
+                    name <input type="text" id="name">
+                </label>
+                <label for="image">
+                    image <input type="text" id="image">
+                </label>
+                <label for="clicks">
+                    clicks <input type="text" id="clicks">
+                </label>
+                <br>
+                <button type="button" id="save">Save</button>
+            <button type="button" id="cancel">Cancel</button>
+            </div>
+            
+
+        </div>
+        <div class="col">
+            <p id="cat"></p>
+            <img src="" alt="" id="catImg">
+            <p id="count">0</p>
+        </div>
+    </div>
+</body>
+<script>
+    let names = ["rina", "rani", "sumedha", "udiya", "kashmira"];
+    let images = ["./2290467335_89067c7b51_z.jpg", "./625069434_db86b67df8_z.jpg",
+        "./4-ways-cheer-up-depressed-cat.jpg", "./A-brown-cat-licking-its-lips.jpg", "./download.jpeg"
+    ]
+    let cat = {
+        id: 0,
+        name: "",
+        image: "",
+        count: [0, 0, 0, 0, 0]
+    }
+
+    let octo = {
+        showCat: function (node) {
+            cat.id = node.dataset.id;
+            cat.name = node.innerHTML;
+            cat.image = images[cat.id];
+            view.renderCatView();
+        },
+        incrementCount: function (node) {
+            cat.count[node.dataset.id]++;
+        },
+        updateValues:function(id,name,img,clicks,node){
+            names[id]=name;
+            images[id]=img;
+            cat.count[id]=clicks;
+            octo.showCat(node);
+        }
+    }
+
+    let view = {
+        initList: function () {
+            let indiCat = document.querySelectorAll('.catName');
+            let adminBtn = document.querySelector('#admin');
+            let adminSub= document.querySelector('#adminSub');
+            let cancelBtn=document.querySelector('#cancel')
+            let name=document.querySelector('#name');
+            let image=document.querySelector('#image');
+            let clicks=document.querySelector('#clicks')
+            let saveBtn=document.querySelector('#save');
+            let catImg=document.querySelector('#catImg');
+
+            adminBtn.addEventListener('click',()=>{
+                adminSub.classList.toggle('hide');
+            });
+            cancelBtn.addEventListener('click',()=>{
+                name.value="";
+                image.value="";
+                clicks.value="";
+                adminSub.classList.add('hide');
+            });
+            saveBtn.addEventListener('click',()=>{
+                let node=document.querySelector(`p[data-id='${catImg.dataset.id}']`);
+                node.innerHTML=name.value;
+                octo.updateValues(catImg.dataset.id,name.value,image.value,clicks.value,node);
+                name.value="";
+                image.value="";
+                clicks.value="";
+                adminSub.classList.add('hide');
+            })
+            indiCat.forEach((node, i) => {
+                node.innerHTML = names[i];
+                node.addEventListener('click', () => {
+                    octo.showCat(node);
+                })
+            });
+            view.initCatView();
+
+        },
+        renderCatView: function () {
+            let dispImg = document.querySelector('#catImg');
+            let dispName = document.querySelector('#cat');
+            let countDom = document.querySelector('#count');
+            dispImg.setAttribute('src', cat.image);
+            dispImg.setAttribute('data-id', cat.id);
+            dispName.innerHTML = cat.name;
+            countDom.innerHTML = cat.count[cat.id] ||  0;
+        },
+        initCatView: function () {
+            let dispImg = document.querySelector('#catImg');
+            let countDom = document.querySelector('#count');
+            dispImg.addEventListener('click', () => {
+                octo.incrementCount(dispImg);
+                countDom.innerHTML = cat.count[dispImg.dataset.id];
+            });
+        }
+    }
+    view.initList();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // class Cat {
+    //     constructor(n) {
+    //         this.name = names[n];
+    //         this.img = images[n];
+    //         this.count = 0;
+    //     }
+    //     countInc() {
+    //         ++this.count;
+    //     }
+    // }
+    // let cats = [new Cat(0), new Cat(1), new Cat(2), new Cat(3), new Cat(4)]
+    // let nameNodes = document.querySelectorAll('.catName');
+    // let dispImg = document.querySelector('#catImg');
+    // let dispName = document.querySelector('#cat');
+    // let countDom = document.querySelector('#count');
+    // nameNodes.forEach((node, i) => {
+    //     node.innerHTML = names[i];
+    //     node.addEventListener('click', ((img, name, i) => {
+    //         return () => {
+    //             countDom.innerHTML = cats[i].count;
+    //             dispName.innerHTML = name;
+    //             dispImg.setAttribute('src', img);
+    //             dispImg.addEventListener('click', (() => {
+    //                 return () => {
+    //                     cats[i].countInc();
+    //                     countDom.innerHTML = cats[i].count;
+    //                 }
+    //             })(i))
+    //         }
+    //     })(images[i], names[i], i));
+    // });
+    // nameNodes[0].click();
+</script>
+
+</html>
