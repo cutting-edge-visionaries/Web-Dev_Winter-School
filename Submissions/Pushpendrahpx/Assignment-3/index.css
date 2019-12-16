@@ -32,8 +32,7 @@ body{
 .counting{
     text-align: center;
     border:1px solid black;
-    padding:20px;
-    margin:20px;
-    position: absolute;
-    bottom: 0;
+    padding:10px;
+    margin:10px;top:auto;
+    
 }
