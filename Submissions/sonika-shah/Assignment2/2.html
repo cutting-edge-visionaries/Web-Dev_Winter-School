@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment-2</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var container = document.createElement('div');
+		container.id = 'container';
+		var b1 = document.createElement('div');
+		b1.id = 'header';
+		var b2 = document.createElement('div');
+		b2.id = 'mainpt1';
+		var b3 = document.createElement('div');
+		b3.id = 'mainpt2';
+		var b4 = document.createElement('div');
+		b4.id = 'side';
+		var b5 = document.createElement('div');
+		b5.id = 'footer';
+		
+		//forming grid using javascript
+		document.body.style.margin="0px";
+		document.body.style.padding="0px";
+		container.style.textAlign="center";
+		container.style.padding="50px";
+		container.style.color="#81160E";
+		container.style.border="#81160E";
+		
+		container.style.display="grid";
+		container.style.gridTemplateAreas= "head head"
+                       "nav  main"
+                       "nav  foot";
+		container.style.gridTemplateColumns=" 33% 34% 33%";
+		container.style.gridTemplateRows="33% 34% 33%";
+		b1.style.border="1px solid #81160E";
+		b2.style.border="1px solid #81160E";
+		b3.style.border="1px solid #81160E";
+		b4.style.border="1px solid #81160E";
+		b5.style.border="1px solid #81160E";
+		
+		b1.innerHTML="Header";
+		b2.innerHTML="Main part";
+		b3.innerHTML="Main part";
+		b4.innerHTML="Side part";
+		b5.innerHTML="Footer";
+		
+		//add and remove event listner
+		document.getElementById("header").addEventListener(onclick,function(){console.log(container)});
+		document.getElementById("header").removeEventListener(onclick,function(){console.log(container)},true);
+		
+		
+		</script>
+	</body>
+</html>
