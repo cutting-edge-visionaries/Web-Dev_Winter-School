@@ -1,0 +1,71 @@
+body{
+    margin:0px;
+    padding: 0px;
+}
+#root{
+    width: 100vw;
+    height: 80vh;
+    margin:0px;
+    display: grid;
+    grid-template-areas: "title title title title"
+                         "btn img img img"
+                         "btn img img img"
+                         "count1 count1 count2 count2";
+}
+#name{
+    text-align: center;
+    color:white;
+    font-size: 5vw;
+    background: teal;
+    margin:0px;
+    padding:0px;
+    grid-area: title;
+}
+img{
+    padding:30px;
+    position: relative;
+    grid-area: img;
+}
+.btnc{padding:30px;
+    position: relative;
+    grid-area: btn;
+}
+.counting{
+    font-size: 30px;
+    text-align: center;
+    font-weight: lighter;
+    margin: 10px;
+    background: teal;
+    color: white;
+    border:1px solid black;
+    box-shadow: 0 0 0 4px white,0 0 0 6px teal;
+}
+#count{
+    grid-area: count1;
+    margin:5px;
+    border:0px solid black;
+}
+#total_count{
+    margin:5px;
+    border:0px solid black;
+    grid-area: count2;
+}
+button{
+    margin:5px;
+    padding: 10px;
+    border:0px solid teal;
+    outline: 0px;
+    background: teal;
+    color:white;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px teal;
+}
+button:hover{
+    box-shadow: 0 0 0 4px white,0 0 0 6px teal;
+}
+button:active{
+    background: white;
+    color: black;
+}

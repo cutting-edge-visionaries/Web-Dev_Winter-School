@@ -1,0 +1,22 @@
+{
+  "name": "cevwinterschool",
+  "version": "1.0.0",
+  "description": "This Winter School was Awesome",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pushpendrahpx/Web-Dev_Winter-School.git"
+  },
+  "author": "Pushpendra Vishwakarma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pushpendrahpx/Web-Dev_Winter-School/issues"
+  },
+  "homepage": "https://github.com/Pushpendrahpx/Web-Dev_Winter-School#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
