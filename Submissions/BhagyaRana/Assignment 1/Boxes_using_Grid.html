@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<title>
+    HTML Page Using CSS Grids
+</title>
+<head>
+    <style>
+        .box1 {
+            grid-area: Header ;
+        }
+
+        .box2 {
+            grid-area: Main1;
+        }
+
+        .box3 {
+            grid-area: Main2 ;
+        }
+
+        .box4 {
+            grid-area: Sidebar ;
+        }
+
+        .box5 {
+            grid-area: Footer ;
+        }
+
+        .grid-container {
+            display: grid;
+            background-color: rgb(158, 15, 15);
+            grid-template-areas:
+                'Header Header Header'  
+                'Main1 Main2 Sidebar'
+                'Footer Footer Sidebar';
+            grid-gap: 4px;
+            padding: 4px;
+        }
+
+            .grid-container > div {
+                background-color: rgba(233, 227, 227);
+                text-align: center;
+                color:  rgb(158, 15, 15);
+                padding: 10px 0px 50px 0px;
+                font-size: 20px;
+            }
+    </style>
+</head>
+<body>
+
+   
+    <div class="grid-container">
+        <div class="box1">Header Content </div>
+        <div class="box2">Main Content </div>
+        <div class="box3">Main Content</div>
+        <div class="box4">Sidebar Content</div>
+        <div class="box5">Footer Content </div>
+    </div>
+
+</body>
+</html>
